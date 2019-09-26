@@ -53,6 +53,7 @@ class WaitAndNotify{
             System.out.println("Waiting for Enter key Pressed");
             scanner.nextLine();
             notify();
+            Thread.sleep(5000);
         }
 
     }

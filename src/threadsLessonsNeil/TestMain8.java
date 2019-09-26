@@ -2,6 +2,7 @@ package threadsLessonsNeil;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 
 public class TestMain8 {
     public static void main(String[] args) throws InterruptedException {
@@ -57,6 +58,7 @@ class ProducerConsumer{
 
 
     public void consume() throws InterruptedException{
+        Random random=new Random();
         while (true){
             synchronized (lock){
                 while (queue.size()==0){
@@ -67,7 +69,7 @@ class ProducerConsumer{
                 System.out.println("Queue size is "+queue.size());
                 lock.notify();
             }
-            Thread.sleep(1000);
+            Thread.sleep(random.nextInt(1000));
         }
         }
 
